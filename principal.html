@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quie Isso Livros</title>
+    <link rel="stylesheet" type="text/css" href="principal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+
+<body class="meuBody">
+    <h5 id="dataHora"></h5>
+    <button id="increase">Zoom+</button>
+    <button id="decrease">Zoom-</button>
+    <div class="text-center text-md-start text-lg-end">
+        <div class="header">
+        </div>
+
+
+        <div id="content">
+            <!--Adiciona Zoom mais/Zoom menos-->
+            <script>
+                document.getElementById('increase').addEventListener('click', function () {
+                    var body = document.body;
+                    var currentSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
+                    body.style.fontSize = (currentSize + 1) + 'px';
+                });
+
+                document.getElementById('decrease').addEventListener('click', function () {
+                    var body = document.body;
+                    var currentSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
+                    if (currentSize > 1) {
+                        body.style.fontSize = (currentSize - 1) + 'px';
+                    }
+                });
+
+            </script>
+        </div>
+
+        <header>
+            <form action="php/pesquisa.php" method="get" id="cacamba">
+                <input type="text" name="pesquisa" id="pesquisa" placeholder="Digite para pesquisar...">
+                <button type="submit" id="botaoPesquisa">Pesquisar</button>
+            </form>
+            <img class="logo" style="width: 50%; display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: auto" id="logo" src="logo-quie-isso-att-3.png" alt="Logo do site" data-nome="logo-quie-isso"
+                data-descricao="quie isso livros logo site">
+            <hr>
+            <br>
+            <h1 style="text-align: center;">Onde você aprende se divertindo! :D</h1>
+            <hr>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/projeto-integrador-2-php/index.php" target="_blank">
+                <i class="fab fa-facebook-square fa-2x"></i>
+            </a>
+            <hr>
+            <a href="https://wa.me/?text=http://localhost/projeto-integrador-2-php/index.php" target="_blank">
+                <i class="fab fa-whatsapp-square fa-2x"></i>
+            </a>
+            <hr>
+            <a href="https://twitter.com/share?url=http://localhost/projeto-integrador-2-php/index.php&text=Quie%20Isso%20Livros" target="_blank">
+                <i class="fab fa-twitter-square fa-2x"></i>
+            </a>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#aventura">Aventura</a></li>
+                <li><a href="#romance">Romance</a></li>
+                <li><a href="#comedia">Comédia</a></li>
+                <li><a href="#ficcao">Ficção</a></li>
+                <li><a href="#literatura_estrangeira">Livros Estrangeiros</a></li>
+                <li><a href="#poesia">Poesia</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <h2 style="text-align: justify;">Por que o livro de matemática estava chateado? Porque teve
+            muitos
+            problemas!
+        </h2>
+        <hr>
+        <main>
+            <h1 style="text-align: center;">Em Destaque: Programação</h1>
+            <br>
+            <section aria-label="programacao">
+                <div class="carrossel">
+                    <button id="anterior" class="carrossel-botao">↞</button>
+                    <button id="proximo" class="carrossel-botao">↠</button>
+
+                    <ul>
+                        <li class="carrossel-imagem ativo">
+                            <img src="fotografias/codigo-limpo.jpg" alt="Código Limpo" data-nome="codigo limpo"
+                                data-descricao="codigo limpo habilidades praticas agile software robert martin">
+                        </li>
+                        <li class="carrossel-imagem">
+                            <img src="fotografias/python-att-1.png" alt="Use a Cabeça Python"
+                                data-nome="use a cabeca python"
+                                data-descricao="use cabeça python reilly paul barry pypi json android app engine modelo de dados">
+                        </li>
+                        <li class="carrossel-imagem">
+                            <img src="fotografias/prog-web.png" alt="Programação Web"
+                                data-nome="programacao web com plataforma java"
+                                data-descricao="programacao web plataforma java fundamentos desenvolvimento aplicacoes saraiva joao alexandre magri">
+                        </li>
+                        <li class="carrossel-imagem">
+                            <img src="fotografias/adol.jpg" alt="Programação para adolescentes"
+                                data-nome="programacao para adolescentes para leigos"
+                                data-descricao="programacao adolescentes leigos projetos divertidos games aplicativos habilidades codificacao">
+                        </li>
+                        <li class="carrossel-imagem">
+                            <img src="fotografias/aprend-php.jpg" alt="PHP, o mais usado na Web"
+                                data-nome="Aprendendo PHP"
+                                data-descricao="aprendendo php introducao amigavel linguagem popular web">
+                        </li>
+                        <li class="carrossel-imagem">
+                            <img src="fotografias/js-descomp.png" alt="Javascript Descomplicado"
+                                data-nome="javascript descomplicado"
+                                data-descricao="javascript descomplicado web iot disposivitos moveis">
+                        </li>
+                        <li class="carrossel-imagem">
+                            <img src="fotografias/prog-em-c.png" alt="Aprendendo programação com C"
+                                data-nome="algoritmos e logica de programacao em c"
+                                data-descricao="algoritmos logica programacao c abordagem didatica">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr>
+            <h2 style="text-align: justify;">Qual é a sobremesa favorita de um livro? Página de
+                sorvete!
+            </h2>
+            <hr>
+            <div id="tendencias">
+                <h1>Tendências:</h1>
+                <hr>
+                <h5><a href="https://www.amazon.com.br">Amazon</a></h5>
+                <h5><a href="https://www.submarino.com.br/">Submarino</a></h5>
+                <h5><a href="https://www.pontofrio.com.br/c/livros?filtro=categoria%5Ed:c484">Ponto</a></h5>
+                <h5><a href="https://www.americanas.com.br/categoria/livros">Americanas</a></h5>
+                <h5><a href="https://www.estantevirtual.com.br/">Estante Virtual</a></h5>
+                <hr>
+            </div>
+            <hr>
+            <h2 style="text-align: justify;">Por que os livros não têm amigos? Porque eles estão sempre
+                sendo verificados!</h2>
+            <hr>
+
+            <section id="aventura">
+                <h1>Livros de Aventura:</h1>
+                <br>
+                <div class="carrossel-1">
+                    <button id="anterior1" class="carrossel-botao1">↞</button>
+                    <button id="proximo1" class="carrossel-botao1">↠</button>
+                    <ul>
+                        <li class="carrossel-1-imagem ativo1">
+                            <img src="fotografias/narnia.jpg" alt="Crônicas de Nárnia" data-nome="cronicas de narnia"
+                                data-descricao="narnia leao feiticeira guarda roupa aslam">
+                        </li>
+                        <li class="carrossel-1-imagem">
+                            <img src="fotografias/senhor-aneis.jpg" alt="O Senhor dos Anéis - A Irmandande do Anel"
+                                data-nome="o senhor dos aneis"
+                                data-descricao="senhor aneis gandalf frodo hobbit aragorn boromir legolas gimli sauron saruman orc">
+                        </li>
+                        <li class="carrossel-1-imagem">
+                            <img src="fotografias/pedra-filo.jpg" alt="Harry Potter e a Pedra Filosofal"
+                                data-nome="harry potter e a pedra filosofal"
+                                data-descricao="harry potter bruxaria hogwarts trouxas escola magia quadribol">
+                        </li>
+                        <li class="carrossel-1-imagem">
+                            <img src="fotografias/alice-pais.jpg" alt="Alice no País das Maravilhas"
+                                data-nome="alice no pais das maravilhas"
+                                data-descricao="alice pais maravilhas menina toca coelho absurdo loucura">
+                        </li>
+                        <li class="carrossel-1-imagem">
+                            <img src="fotografias/conde-monte.jpg" alt="O Conde de Monte Cristo"
+                                data-nome="o conde de monte cristo"
+                                data-descricao="edmond dantes traicao castelo prisao">
+                        </li>
+                        <li class="carrossel-1-imagem">
+                            <img src="fotografias/moby-dick.jpg" alt="Moby Dick" data-nome="moby dick"
+                                data-descricao="ishmael ahab pequod baleia moby dick">
+                        </li>
+                        <li class="carrossel-1-imagem">
+                            <img src="fotografias/volta-mundo.jpg" alt="Volta ao Mundo em 80 dias"
+                                data-nome="volta ao mundo em 80 dias"
+                                data-descricao="cavalheiro ingles phileas fogg passepartout fura vidas faz tudo detetive fix aouda">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr>
+            <h2 style="text-align: justify;">Por que o fantasma continuou comprando tantos livros?
+                Porque
+                passou por eles tão rapidamente.</h2>
+            <hr>
+            <section id="romance">
+                <h1>Livros de Romance:</h1>
+                <br>
+                <div class="carrossel-2">
+                    <button id="anterior2" class="carrossel-botao2">↞</button>
+                    <button id="proximo2" class="carrossel-botao2">↠</button>
+                    <ul>
+                        <li class="carrossel-2-imagem ativo2">
+                            <img src="fotografias/culpa-estrelas.jpg" alt="A Culpa é das Estrelas" data-nome="culpa das estrelas"
+                                data-descricao="romance adolescente cancer John Green Hazel Grace Lancaster Augustus Waters">
+                        </li>
+                        <li class="carrossel-2-imagem">
+                            <img src="fotografias/agua-elefantes.jpg"
+                            alt="Água para Elefantes" data-nome="agua para elefantes"
+                            data-descricao="Jacob Jankowski casa de repouso circo esquadrao voador circo irmaos benzini">
+                        </li>
+                        <li class="carrossel-2-imagem">
+                            <img  src="fotografias/ps-te-amo.jpg"
+                            alt="P.S.: Eu te Amo" data-nome="ps eu te amo"
+                            data-descricao="Gerry  Holly almas gemeas amor tumor cerebral cartas assinadas">
+                        </li>
+                        <li class="carrossel-2-imagem">
+                            <img src="fotografias/morro-ventos.jpg"
+                            alt="O Morro dos Ventos Uivantes" data-nome="morro ventos uivantes"
+                            data-descricao="emily bronte ellis bell narrativa gotica inglaterra familia earnshaw linton.">
+                        </li>
+                        <li class="carrossel-2-imagem">
+                            <img src="fotografias/orgulho-preconceito.jpg"
+                            alt="Orgulho e Preconceito" data-nome="orgulho e preconceito"
+                            data-descricao="jane austen burguesia inglesa seculo xix amor dinheiro promiscuas mesquinhas">
+                        </li>
+                        <li class="carrossel-2-imagem">
+                            <img src="fotografias/olhai-lirios.jpg" alt="Olhai os Lírios do Campo"
+                            data-nome="olhai os lirios do campo" data-descricao="erico verissimo sermao da montanha eugenio fontes medico paixao olivia">
+                        </li>
+                        <li class="carrossel-2-imagem">
+                            <img src="fotografias/anna-karenina.jpg"
+                            alt="Anna Karenina" data-nome="anna karenina"
+                            data-descricao="leo tolstoy amor casamento familia infidelidade sociedade russa progresso tradicao">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr>
+            <h2 style="text-align: justify;">Que tipo de livros os músicos leem? Livros de banda.</h2>
+            <hr>
+            <section id="comedia">
+                <h1>Livros de Comédia:</h1>
+                <br>
+                <div class="carrossel-3">
+                    <button id="anterior3" class="carrossel-botao3">↞</button>
+                    <button id="proximo3" class="carrossel-botao3">↠</button>
+                    <ul>
+                        <li class="carrossel-3-imagem ativo3">
+                            <img src="fotografias/auto-compadecida.png" alt="O Auto da Compadecida" data-nome="auto compadecida"
+                                data-descricao="ariano suassuna sertao nordestino chico joao grilo tradicao popular humor">
+                        </li>
+                        <li class="carrossel-3-imagem">
+                            <img src="fotografias/cade-voce-bebe.png"
+                            alt="Cade você Bernadete?" data-nome="cade voce bernadete"
+                            data-descricao="maria semple conceito identidade complexidades vida moderna bernadette fox">
+                        </li>
+                        <li class="carrossel-3-imagem">
+                            <img  src="fotografias/epaminondas-gato.png"
+                            alt="Epaminondas: O Gato Explicador" data-nome="epaminondas gato explicador"
+                            data-descricao="clovis barros filho epa felino necessidade atencao mesa cabeceira coisas quebram">
+                        </li>
+                        <li class="carrossel-3-imagem">
+                            <img src="fotografias/guia-do-mochileiro.png"
+                            alt="O Guia do Mochileiro das Galáxias" data-nome="guia mochileiro galaxias"
+                            data-descricao="douglas adams arthur dent terra destruida pelos vogons raca alienigena ford">
+                        </li>
+                        <li class="carrossel-3-imagem">
+                            <img src="fotografias/gulliver-br.png"
+                            alt="As Viagens de Gulliver" data-nome="viagens gulliver"
+                            data-descricao="jonathan swift lemuel gulliver satira lilliput pessoas minusculas gigante brobdingnag">
+                        </li>
+                        <li class="carrossel-3-imagem">
+                            <img src="fotografias/sonhos-noite-br.png" alt="Sonhos de uma noite de Verão"
+                            data-nome="sonhos uma noite verao" data-descricao="william shakespeare hermia helena lisandro demetrio rei rainha fadas">
+                        </li>
+                        <li class="carrossel-3-imagem">
+                            <img src="fotografias/tom-sawyer-br.png"
+                            alt="As aventuras de Tom Sawyer" data-nome="aventuras tom sawyer"
+                            data-descricao="mark twain peripecias confusoes criancas adultos sao petesburgo">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr>
+            <h2 style="text-align: justify;">Por que os livros sobre montanhas são tão interessantes?
+                Porque eles têm tantos obstáculos.</h2>
+            <hr>
+            <section id="ficcao">
+                <h1>Livros de Ficção:</h1>
+                <br>
+                <div class="carrossel-4">
+                    <button id="anterior4" class="carrossel-botao4">↞</button>
+                    <button id="proximo4" class="carrossel-botao4">↠</button>
+                    <ul>
+                        <li class="carrossel-4-imagem ativo4">
+                            <img src="fotografias/admiravel-br.png" alt="Admirável Mundo Novo" data-nome="admiravel mundo novo"
+                                data-descricao="aldous huxley desafia convencoes sociais explora limites humanidade visao futurista distopica">
+                        </li>
+                        <li class="carrossel-4-imagem">
+                            <img src="fotografias/1984-br.png"
+                            alt="1984" data-nome="1984"
+                            data-descricao="george orwell literatura politica grande irmao atemporal mundo opressivo sombrio teletela ministerio da verdade">
+                        </li>
+                        <li class="carrossel-4-imagem">
+                            <img  src="fotografias/sentinela-br.png"
+                            alt="O Sentinela" data-nome="o sentinela"
+                            data-descricao="arthur clarke wilson explorador espacial lua estrutura piramide bloqueia tentativa aproximar alienigenas transmissor">
+                        </li>
+                        <li class="carrossel-4-imagem">
+                            <img src="fotografias/blade-runner-br.png"
+                            alt="Blade Runner" data-nome="blade runner"
+                            data-descricao="philip dick rick deckard cacador recompensas androides fugitivos cyberpunk humanos robo humanoide">
+                        </li>
+                        <li class="carrossel-4-imagem">
+                            <img src="fotografias/duna-br.png"
+                            alt="Duna" data-nome="duna"
+                            data-descricao="frank herbert imperio intergalatico feudal feudos planetarios controlados casas nobres casa corrino paul atreides">
+                        </li>
+                        <li class="carrossel-4-imagem">
+                            <img src="fotografias/frankenstein-br.png" alt="Frankenstein"
+                            data-nome="frankenstein" data-descricao="mary shelley victor segredo criar vida monstro hediondo fonte miseria morte capitao walton">
+                        </li>
+                        <li class="carrossel-4-imagem">
+                            <img src="fotografias/guerra-mundos-br.png"
+                            alt="A Guerra dos Mundos" data-nome="guerra mundos"
+                            data-descricao="herbert george wells invasao marciana alienigena terra">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr>
+            <h2 style="text-align: justify;">Por que a garota continuou comprando tantos livros? Porque
+                ela
+                não tinha controle de prateleira.</h2>
+            <hr>
+            <section id="literatura_estrangeira">
+                <h1>Livros de Literatura Estrangeira:</h1>
+                <br>
+                <div class="carrossel-5">
+                    <button id="anterior5" class="carrossel-botao5">↞</button>
+                    <button id="proximo5" class="carrossel-botao5">↠</button>
+                    <ul>
+                        <li class="carrossel-5-imagem ativo5">
+                            <img src="fotografias/crime-e-castigo-br.png" alt="Crime e Castigo" data-nome="crime castigo"
+                                data-descricao="fiodor dostoievski crime cometido ex estudante rodion ramanovich raskolnikov consequencias">
+                        </li>
+                        <li class="carrossel-5-imagem">
+                            <img src="fotografias/o-processo-br.png"
+                            alt="O Processo" data-nome="processo"
+                            data-descricao="franz kafka josef bancario preso processado crime que nao sabe labirinto burocratico legal">
+                        </li>
+                        <li class="carrossel-5-imagem">
+                            <img  src="fotografias/dom-quixote-br.png"
+                            alt="Dom Quixote De La Mancha" data-nome="dom quixote"
+                            data-descricao="miguel cervantes aventuras desventuras homem meia idade cavaleiro andante sancho panca">
+                        </li>
+                        <li class="carrossel-5-imagem">
+                            <img src="fotografias/iliada-1-br.png"
+                            alt="Ilíada" data-nome="iliada"
+                            data-descricao="homero poema epico cerco cidade troia aqueus resgatar helena menelau paris aquiles">
+                        </li>
+                        <li class="carrossel-5-imagem">
+                            <img src="fotografias/madame-bovary-br.png"
+                            alt="Madame Bovary" data-nome="madame bovary"
+                            data-descricao="gustave flaubert narrativa realista critica sociedade burguesa emma charles realidade monotona">
+                        </li>
+                        <li class="carrossel-5-imagem">
+                            <img src="fotografias/nome-rosa-br.png" alt="O Nome da Rosa"
+                            data-nome="nome rosa" data-descricao="umberto eco italia medieval mosteiro beneditino frei concilio clero investiga crimes heresia">
+                        </li>
+                        <li class="carrossel-5-imagem">
+                            <img src="fotografias/pequeno-principe-br.png"
+                            alt="O Pequeno Príncipe" data-nome="pequeno principe"
+                            data-descricao="antoine saint exupery menino amizade piloto de aviao asteroide 612 deserto saara personagens solitarios">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr>
+            <h2 style="text-align: justify;">Por que os escritores são sempre frios? Por causa de todos
+                os
+                rascunhos.</h2>
+            <hr>
+            <section id="poesia">
+                <h1>Livros de Poesia:</h1>
+                <br>
+                <div class="carrossel-6">
+                    <button id="anterior6" class="carrossel-botao6">↞</button>
+                    <button id="proximo6" class="carrossel-botao6">↠</button>
+                    <ul>
+                        <li class="carrossel-6-imagem ativo6">
+                            <img src="fotografias/amar-se-aprende-br.png" alt="Amar se Aprende Amando" data-nome="amar aprende amando"
+                                data-descricao="carlos drummond andrade sentimento amoroso amor sublime convivio ideal fusao amantes">
+                        </li>
+                        <li class="carrossel-6-imagem">
+                            <img src="fotografias/antologia-poetica-br.png"
+                            alt="Antologia Poética" data-nome="antologia poetica"
+                            data-descricao="vinicius moraes espirito apaixonado irreverente vida obra poetinha">
+                        </li>
+                        <li class="carrossel-6-imagem">
+                            <img  src="fotografias/flores-mal-br.png"
+                            alt="As Florers do Mal" data-nome="flores mal"
+                            data-descricao="charles baudelaire luxuria alienacao beleza literatura gotica confronta convencoes morais">
+                        </li>
+                        <li class="carrossel-6-imagem">
+                            <img src="fotografias/libertinagem-e-estrela-br.png"
+                            alt="Libertinagem e Estrela da Manhã" data-nome="libertinagem estrela manha"
+                            data-descricao="manuel bandeira modernismo coloquialismo lirico rondo balada cantiga versos livres rimas refroes">
+                        </li>
+                        <li class="carrossel-6-imagem">
+                            <img src="fotografias/para-viver-poesia-br.png"
+                            alt="Para Viver com Poesia" data-nome="para viver poesia"
+                            data-descricao="mario quintana recortar eliminar destaque antologia forma critica temas dominantes">
+                        </li>
+                        <li class="carrossel-6-imagem">
+                            <img src="fotografias/toda-poesia-br.png" alt="Toda Poesia"
+                            data-nome="toda poesia" data-descricao="paulo leminski haikais cancoes poemas concretos liricos autor curitibano">
+                        </li>
+                        <li class="carrossel-6-imagem">
+                            <img src="fotografias/vinte-poemas-br.png"
+                            alt="Vinte Poemas de Amor e Uma Canção Desesperada" data-nome="vinte poemas amor uma cançao desesperada"
+                            data-descricao="pablo neruda essencia perda exaltacao amores vividos chile reverenciar feminino sensualidade">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr>
+            <h2 style="text-align: justify;">Por que o livro foi para o hospital? Estava com a coluna
+                quebrada!</h2>
+            <hr>
+
+        <h3>Localização das Livrarias:</h3>
+    
+        <div id="map"></div>
+        <br>
+        <a href="php/relatorio.php" class="meu-link">Ver Relatório</a>
+        <a href="php/falecomigo.php" class="meu-link">Fale Comigo</a>
+        <br>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeoX8LA5eW4wgxJY9gRYX3obhGh9g0Lj4lUVdlBwWnzDTOUcA/viewform?embedded=true" width="640" height="1194" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <br>
+        </main>
+
+        <footer style="text-align: center;">
+            <h3>Sobre o autor deste site:
+                <a href="https://github.com/silenciopz">silenciopz</a>
+            </h3>
+            <br>
+            <br>
+            <h3>Copyright © 2024 silenciopz, todos os direitos reservados. Site hosteado por: <a
+                    href="https://www.netlify.com/">Netlify</a></h3>
+            <br>
+        </footer>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Topo</button>
+
+        <script src="./javascript/principal.js"></script>
+        <script src="./javascript/carrossel.js"></script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBofVydPNhQc3DUKaeEt7s35idowJtD4F8&callback=initMap">
+    </script>
+    </div>
+</body>
+
+</html>
